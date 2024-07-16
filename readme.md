@@ -113,5 +113,131 @@ console.log(persons);
 // ]
 ```
 
+### Question
+
+Create an array of numbers. Write a function that uses the reduce method to calculate the sum of all even numbers in the array.
 
 
+### Answer :
+```javascript
+// Array of numbers
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Function to calculate sum of even numbers using reduce
+const sumOfEvenNumbers = (numbers) => {
+  return numbers.reduce((sum, num) => {
+    if (num % 2 === 0) {
+      return sum + num;
+    }
+    return sum;
+  }, 0);
+};
+
+// Print the result
+console.log(sumOfEvenNumbers(numbers)); // Output: 30 (2 + 4 + 6 + 8 + 10 = 30)
+```
+
+
+### Question
+
+
+Write a function that determines whether a given year is a leap year.
+
+### Answer :
+```javascript
+
+// Function to check if a year is a leap year
+const isLeapYear = (year) => {
+  // Leap year condition: divisible by 4 and not divisible by 100, unless divisible by 400
+  return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+};
+
+// Example usage
+const year = 2024;
+if (isLeapYear(year)) {
+  console.log(`${year} is a leap year.`);
+} else {
+  console.log(`${year} is not a leap year.`);
+}
+// Output: 2024 is a leap year.
+```
+### Question
+
+Create an array of numbers with some duplicate values. Write a function to filter out the duplicate values and return a new array with only unique numbers. Print the result.
+
+
+### Answer :
+```javascript
+// Array with duplicate numbers
+const numbersWithDuplicates = [1, 2, 2, 3, 4, 4, 5, 6, 6, 7];
+
+// Function to filter out duplicate numbers
+const filterUniqueNumbers = (numbers) => {
+  return [...new Set(numbers)];
+};
+
+// Print the result
+console.log(filterUniqueNumbers(numbersWithDuplicates)); // Output: [1, 2, 3, 4, 5, 6, 7]
+
+```
+
+### Question
+
+
+
+Write a function that takes an array of numbers and returns the maximum value.
+### Answer :
+```javascript
+
+
+// Function to find maximum value in an array
+const findMaxValue = (numbers) => {
+  return Math.max(...numbers);
+};
+
+// Example usage
+const numbers = [5, 2, 9, 1, 7];
+console.log(findMaxValue(numbers)); // Output: 9
+
+
+
+```
+
+
+### Question
+
+
+
+Create an array of objects representing students with 'name' and 'grades' properties. Write a function to sort the students by average grade in descending order.
+### Answer :
+```javascript
+
+
+// Array of student objects
+const students = [
+  { name: 'Alice', grades: [85, 90, 88] },
+  { name: 'Bob', grades: [95, 92, 88] },
+  { name: 'Charlie', grades: [90, 85, 92] }
+];
+
+// Function to sort students by average grade in descending order
+const sortStudentsByAverageGrade = (students) => {
+  return students.sort((student1, student2) => {
+    const avg1 = student1.grades.reduce((sum, grade) => sum + grade, 0) / student1.grades.length;
+    const avg2 = student2.grades.reduce((sum, grade) => sum + grade, 0) / student2.grades.length;
+    return avg2 - avg1; // Sort descending
+  });
+};
+
+// Print the sorted array
+console.log(sortStudentsByAverageGrade(students));
+// Output:
+// [
+//   { name: 'Bob', grades: [95, 92, 88] },
+//   { name: 'Charlie', grades: [90, 85, 92] },
+//   { name: 'Alice', grades: [85, 90, 88] }
+// ]
+
+
+
+```
